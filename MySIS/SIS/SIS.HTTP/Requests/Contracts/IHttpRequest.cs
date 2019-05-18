@@ -1,6 +1,6 @@
-﻿using System.Collections.Generic;
-using SIS.HTTP.Enums;
+﻿using SIS.HTTP.Enums;
 using SIS.HTTP.Headers;
+using System.Collections.Generic;
 
 namespace SIS.HTTP.Requests.Contracts
 {
