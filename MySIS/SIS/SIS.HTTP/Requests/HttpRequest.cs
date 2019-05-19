@@ -38,6 +38,10 @@ namespace SIS.HTTP.Requests
 
         private void ParseRequestFormDataParameters(string requestBody)
         {
+            if (string.IsNullOrEmpty(requestBody))
+            {
+                return;
+            }
             //TODO: Parse Multiple Parameters By Name
             requestBody.Split('&')
                 .Select(formParameters => formParameters.Split('='))
