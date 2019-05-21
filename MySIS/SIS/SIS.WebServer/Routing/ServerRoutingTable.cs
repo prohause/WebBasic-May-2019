@@ -11,10 +11,9 @@ namespace SIS.WebServer.Routing
     public class ServerRoutingTable : IServerRoutingTable
     {
         private Dictionary<HttpRequestMethod, Dictionary<string, Func<IHttpRequest, IHttpResponse>>> routingTable;
-
         public ServerRoutingTable()
         {
-            routingTable = new Dictionary<HttpRequestMethod, Dictionary<string, Func<IHttpRequest, IHttpResponse>>>
+            this.routingTable = new Dictionary<HttpRequestMethod, Dictionary<string, Func<IHttpRequest, IHttpResponse>>>
             {
                 [HttpRequestMethod.Get] = new Dictionary<string, Func<IHttpRequest, IHttpResponse>>(),
                 [HttpRequestMethod.Post] = new Dictionary<string, Func<IHttpRequest, IHttpResponse>>(),
@@ -29,7 +28,7 @@ namespace SIS.WebServer.Routing
             CoreValidator.ThrowIfNullOrEmpty(path, nameof(path));
             CoreValidator.ThrowIfNull(func, nameof(func));
 
-            routingTable[method].Add(path, func);
+            this.routingTable[method].Add(path, func);
         }
 
         public bool Contains(HttpRequestMethod method, string path)
@@ -37,15 +36,15 @@ namespace SIS.WebServer.Routing
             CoreValidator.ThrowIfNull(method, nameof(method));
             CoreValidator.ThrowIfNullOrEmpty(path, nameof(path));
 
-            return routingTable.ContainsKey(method) && routingTable[method].ContainsKey(path);
+            return this.routingTable.ContainsKey(method) && this.routingTable[method].ContainsKey(path);
         }
 
-        public Func<IHttpRequest, IHttpResponse> Get(HttpRequestMethod requestMethod, string path)
+        public Func<IHttpRequest, IHttpResponse> Get(HttpRequestMethod method, string path)
         {
-            CoreValidator.ThrowIfNull(requestMethod, nameof(requestMethod));
+            CoreValidator.ThrowIfNull(method, nameof(method));
             CoreValidator.ThrowIfNullOrEmpty(path, nameof(path));
 
-            return routingTable[requestMethod][path];
+            return this.routingTable[method][path];
         }
     }
 }

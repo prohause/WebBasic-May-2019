@@ -9,14 +9,8 @@ namespace SIS.WebServer.Result
     {
         public HtmlResult(string content, HttpResponseStatusCode responseStatusCode) : base(responseStatusCode)
         {
-            Headers.AddHeader(new HttpHeader("Content-Type", "text/html; charset=utf-8"));
-            Content = Encoding.UTF8.GetBytes(content);
+            this.Headers.AddHeader(new HttpHeader("Content-Type", "text/html; charset=utf-8"));
+            this.Content = Encoding.UTF8.GetBytes(content);
         }
-
-        //public HtmlResult(byte[] content, HttpResponseStatusCode responseStatusCode):base(responseStatusCode)
-        //{
-        //    Headers.AddHeader(new HttpHeader("Content-Type","text/html"));
-        //    Content = content;
-        //}
     }
 }

@@ -8,10 +8,12 @@ namespace SIS.HTTP.Exceptions
 
         public InternalServerErrorException() : this(InternalServerErrorExceptionDefaultMessage)
         {
+
         }
 
         public InternalServerErrorException(string name) : base(name)
         {
+
         }
     }
 }

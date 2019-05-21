@@ -1,6 +1,4 @@
 ﻿using SIS.HTTP.Enums;
-using System.Collections.Generic;
-using System.Linq;
 
 namespace SIS.HTTP.Extensions
 {
@@ -8,25 +6,20 @@ namespace SIS.HTTP.Extensions
     {
         public static string GetStatusLine(this HttpResponseStatusCode statusCode)
         {
-            var statusLine = statusCode.ToString().ToList();
-            var result = new List<char>();
-
-            for (int i = 0; i < statusLine.Count; i++)
+            switch (statusCode)
             {
-                if (i > 0 && char.IsUpper(statusLine[i]))
-                {
-                    result.Add(' ');
-                    result.Add(statusLine[i]);
-                }
-                else
-                {
-                    result.Add(statusLine[i]);
-                }
+                case HttpResponseStatusCode.Ok: return "200 OK";
+                case HttpResponseStatusCode.Created: return "201 Created";
+                case HttpResponseStatusCode.Found: return "302 Found";
+                case HttpResponseStatusCode.SeeOther: return "303 See Other";
+                case HttpResponseStatusCode.BadRequest: return "400 Bad Request";
+                case HttpResponseStatusCode.Unauthorized: return "401 Unauthorized";
+                case HttpResponseStatusCode.Forbidden: return "403 Forbidden";
+                case HttpResponseStatusCode.NotFound: return "404 Not Found";
+                case HttpResponseStatusCode.InternalServerError: return "500 Internal Server Error";
             }
 
-            var statusNumber = (int)statusCode;
-
-            return statusNumber + " " + string.Join("", result);
+            return null;
         }
     }
 }

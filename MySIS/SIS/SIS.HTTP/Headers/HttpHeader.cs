@@ -8,18 +8,14 @@ namespace SIS.HTTP.Headers
         {
             CoreValidator.ThrowIfNullOrEmpty(key, nameof(key));
             CoreValidator.ThrowIfNullOrEmpty(value, nameof(value));
-
-            Key = key;
-            Value = value;
+            this.Key = key;
+            this.Value = value;
         }
 
         public string Key { get; }
 
         public string Value { get; }
 
-        public override string ToString()
-        {
-            return $"{Key}: {Value}";
-        }
+        public override string ToString() => $"{this.Key}: {this.Value}";
     }
 }

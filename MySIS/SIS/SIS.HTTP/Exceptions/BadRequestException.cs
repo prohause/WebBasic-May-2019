@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Transactions;
 
 namespace SIS.HTTP.Exceptions
 {
@@ -8,10 +9,12 @@ namespace SIS.HTTP.Exceptions
 
         public BadRequestException() : this(BadRequestExceptionDefaultMessage)
         {
+            
         }
 
         public BadRequestException(string name) : base(name)
         {
+            
         }
     }
 }
