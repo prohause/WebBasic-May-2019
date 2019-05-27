@@ -1,12 +1,12 @@
-﻿using System;
-using System.Linq;
-using System.Text;
-using SIS.HTTP.Common;
+﻿using SIS.HTTP.Common;
+using SIS.HTTP.Cookie;
+using SIS.HTTP.Cookie.Contracts;
 using SIS.HTTP.Enums;
 using SIS.HTTP.Extensions;
 using SIS.HTTP.Headers;
 using SIS.HTTP.Headers.Contracts;
 using SIS.HTTP.Responses.Contracts;
+using System.Text;
 
 namespace SIS.HTTP.Responses
 {
@@ -16,6 +16,7 @@ namespace SIS.HTTP.Responses
         {
             this.Headers = new HttpHeaderCollection();
             this.Content = new byte[0];
+            this.Cookies = new HttpCookieCollection();
         }
 
         public HttpResponse(HttpResponseStatusCode statusCode) : this()
@@ -27,6 +28,7 @@ namespace SIS.HTTP.Responses
         public HttpResponseStatusCode StatusCode { get; set; }
 
         public IHttpHeaderCollection Headers { get; }
+        public IHttpCookieCollection Cookies { get; }
 
         public byte[] Content { get; set; }
 
@@ -35,10 +37,15 @@ namespace SIS.HTTP.Responses
             this.Headers.AddHeader(header);
         }
 
+        public void AddCookie(HttpCookie cookie)
+        {
+            this.Cookies.AddCookie(cookie);
+        }
+
         public byte[] GetBytes()
         {
             byte[] httpResponseBytesWithoutBody = Encoding.UTF8.GetBytes(this.ToString());
-            
+
             byte[] httpResponseBytesWithBody = new byte[httpResponseBytesWithoutBody.Length + this.Content.Length];
 
             for (int i = 0; i < httpResponseBytesWithoutBody.Length; i++)
@@ -56,12 +63,17 @@ namespace SIS.HTTP.Responses
 
         public override string ToString()
         {
-            StringBuilder result = new StringBuilder();
+            var result = new StringBuilder();
 
             result
                 .Append($"{GlobalConstants.HttpOneProtocolFragment} {this.StatusCode.GetStatusLine()}")
                 .Append(GlobalConstants.HttpNewLine)
                 .Append($"{this.Headers}").Append(GlobalConstants.HttpNewLine);
+
+            if (this.Cookies.HasCookies())
+            {
+                result.Append($"{this.Cookies}").Append(GlobalConstants.HttpNewLine);
+            }
 
             result.Append(GlobalConstants.HttpNewLine);
 

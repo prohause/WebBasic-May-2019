@@ -1,7 +1,7 @@
-﻿using System.Text;
-using SIS.HTTP.Enums;
+﻿using SIS.HTTP.Enums;
 using SIS.HTTP.Headers;
 using SIS.HTTP.Responses;
+using System.Text;
 
 namespace SIS.WebServer.Result
 {
