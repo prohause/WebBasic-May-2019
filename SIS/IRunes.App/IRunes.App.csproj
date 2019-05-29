@@ -6,14 +6,13 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\SIS.HTTP\SIS.HTTP.csproj" />
+    <ProjectReference Include="..\IRunes.Data\IRunes.Data.csproj" />
     <ProjectReference Include="..\SIS.WebServer\SIS.WebServer.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="Views\Home\Home.html">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
+    <Folder Include="Controllers\" />
+    <Folder Include="Extensions\" />
   </ItemGroup>
 
 </Project>
