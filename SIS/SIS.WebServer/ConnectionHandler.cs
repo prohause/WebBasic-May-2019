@@ -9,10 +9,10 @@ using SIS.HTTP.Cookies;
 using SIS.HTTP.Enums;
 using SIS.HTTP.Exceptions;
 using SIS.HTTP.Requests;
-using SIS.HTTP.Requests.Contracts;
-using SIS.HTTP.Responses.Contracts;
-using SIS.WebServer.Result;
-using SIS.WebServer.Routing.Contracts;
+using SIS.HTTP.Responses;
+using SIS.HTTP.Sessions;
+using SIS.MvcFramework.Result;
+using SIS.WebServer.Routing;
 using SIS.WebServer.Sessions;
 
 namespace SIS.WebServer
@@ -66,22 +66,22 @@ namespace SIS.WebServer
 
         private IHttpResponse ReturnIfResource(IHttpRequest httpRequest)
         {
-            const string folderPrefix = "/../../../../";
-            var assemblyLocation = Assembly.GetExecutingAssembly().Location;
-            const string resourceFolderPath = "Resources/";
-            var requestedResource = httpRequest.Path;
+            string folderPrefix = "/../";
+            string assemblyLocation = Assembly.GetExecutingAssembly().Location;
+            string resourceFolderPath = "Resources/";
+            string requestedResource = httpRequest.Path;
 
-            var fullPathToResources = assemblyLocation + folderPrefix + resourceFolderPath + requestedResource;
+            string fullPathToResource = assemblyLocation + folderPrefix + resourceFolderPath + requestedResource;
 
-            Console.WriteLine(fullPathToResources);
-
-            if (File.Exists(fullPathToResources))
+            if (File.Exists(fullPathToResource))
             {
-                var content = File.ReadAllBytes(fullPathToResources);
-                return new InlineResourceResult(content, HttpResponseStatusCode.Found);
+                byte[] content = File.ReadAllBytes(fullPathToResource);
+                return new InlineResourceResult(content, HttpResponseStatusCode.Ok);
             }
-
-            return new TextResult($"Route with method {httpRequest.RequestMethod} and path \"{httpRequest.Path}\" not found.", HttpResponseStatusCode.NotFound);
+            else
+            {
+                return new TextResult($"Route with method {httpRequest.RequestMethod} and path \"{httpRequest.Path}\" not found.", HttpResponseStatusCode.NotFound);
+            }
         }
 
         private IHttpResponse HandleRequest(IHttpRequest httpRequest)
@@ -97,29 +97,38 @@ namespace SIS.WebServer
 
         private string SetRequestSession(IHttpRequest httpRequest)
         {
-            string sessionId = null;
-
             if (httpRequest.Cookies.ContainsCookie(HttpSessionStorage.SessionCookieKey))
             {
-                var cookie = httpRequest.Cookies.GetCookie(HttpSessionStorage.SessionCookieKey);
-                sessionId = cookie.Value;
-            }
-            else
-            {
-                sessionId = Guid.NewGuid().ToString();
+                var cookie = httpRequest
+                    .Cookies
+                    .GetCookie(HttpSessionStorage.SessionCookieKey);
+
+                string sessionId = cookie.Value;
+
+                if (HttpSessionStorage.ContainsSession(sessionId))
+                {
+                    httpRequest.Session = HttpSessionStorage.GetSession(sessionId);
+                }
             }
 
-            httpRequest.Session = HttpSessionStorage.GetSession(sessionId);
-            return httpRequest.Session.Id;
+            if (httpRequest.Session == null)
+            {
+                string sessionId = Guid.NewGuid().ToString();
+
+                httpRequest.Session = HttpSessionStorage.GetSession(sessionId);
+            }
+
+            return httpRequest.Session?.Id;
         }
 
         private void SetResponseSession(IHttpResponse httpResponse, string sessionId)
         {
-            if (sessionId != null)
+            IHttpSession responseSession = HttpSessionStorage.GetSession(sessionId);
+
+            if (responseSession.IsNew)
             {
-                httpResponse.Cookies
-                    .AddCookie(new HttpCookie(HttpSessionStorage
-                        .SessionCookieKey, sessionId));
+                responseSession.IsNew = false;
+                httpResponse.AddCookie(new HttpCookie(HttpSessionStorage.SessionCookieKey, responseSession.Id));
             }
         }
 

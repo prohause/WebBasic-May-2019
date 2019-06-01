@@ -19,10 +19,6 @@ namespace SIS.HTTP.Cookies
         {
             CoreValidator.ThrowIfNull(httpCookie, nameof(httpCookie));
 
-            if (this.ContainsCookie(httpCookie.Key))
-            {
-                return;
-            }
             this.httpCookies.Add(httpCookie.Key, httpCookie);
         }
 
@@ -62,7 +58,7 @@ namespace SIS.HTTP.Cookies
             StringBuilder sb = new StringBuilder();
 
             foreach (var cookie in this.httpCookies.Values)
-            {
+            {                
                 sb.Append($"Set-Cookie: {cookie}").Append(GlobalConstants.HttpNewLine);
             }
 
