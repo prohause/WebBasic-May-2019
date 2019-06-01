@@ -1,6 +1,6 @@
-﻿using System.Linq;
+﻿using IRunes.Models;
+using System.Linq;
 using System.Net;
-using IRunes.Models;
 
 namespace IRunes.App.Extensions
 {

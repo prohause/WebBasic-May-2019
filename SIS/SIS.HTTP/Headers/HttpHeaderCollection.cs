@@ -1,6 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using SIS.HTTP.Common;
+using System.Collections.Generic;
 using System.Linq;
-using SIS.HTTP.Common;
 
 namespace SIS.HTTP.Headers
 {
@@ -33,6 +33,5 @@ namespace SIS.HTTP.Headers
 
         public override string ToString() => string.Join("\r\n",
             this.httpHeaders.Values.Select(header => header.ToString()));
-
     }
 }

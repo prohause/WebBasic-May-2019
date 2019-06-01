@@ -30,7 +30,7 @@ namespace AppViewCodeNamespace
 	        var html = new StringBuilder();
 
             {csharpHtmlCode}
-            
+
 	        return html.ToString();
         }}
     }}

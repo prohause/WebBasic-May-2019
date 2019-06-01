@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using IRunes.App.Extensions;
+﻿using IRunes.App.Extensions;
 using IRunes.App.ViewModels;
 using IRunes.Models;
 using IRunes.Services;
@@ -9,6 +7,8 @@ using SIS.MvcFramework.Attributes;
 using SIS.MvcFramework.Attributes.Security;
 using SIS.MvcFramework.Mapping;
 using SIS.MvcFramework.Result;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace IRunes.App.Controllers
 {

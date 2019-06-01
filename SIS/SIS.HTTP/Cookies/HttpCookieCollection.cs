@@ -1,8 +1,8 @@
-﻿using System.Collections;
+﻿using SIS.HTTP.Common;
+using SIS.HTTP.Cookies.Contracts;
+using System.Collections;
 using System.Collections.Generic;
 using System.Text;
-using SIS.HTTP.Common;
-using SIS.HTTP.Cookies.Contracts;
 
 namespace SIS.HTTP.Cookies
 {
@@ -58,7 +58,7 @@ namespace SIS.HTTP.Cookies
             StringBuilder sb = new StringBuilder();
 
             foreach (var cookie in this.httpCookies.Values)
-            {                
+            {
                 sb.Append($"Set-Cookie: {cookie}").Append(GlobalConstants.HttpNewLine);
             }
 

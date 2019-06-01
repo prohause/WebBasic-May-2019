@@ -7,7 +7,7 @@ namespace SIS.MvcFramework.Mapping
     {
         public static TDestination ProjectTo<TDestination>(object origin)
         {
-            var destinationInstance = (TDestination) Activator.CreateInstance(typeof(TDestination));
+            var destinationInstance = (TDestination)Activator.CreateInstance(typeof(TDestination));
 
             foreach (var originProperty in origin.GetType().GetProperties())
             {
@@ -18,7 +18,7 @@ namespace SIS.MvcFramework.Mapping
                 {
                     if (destinationProperty.PropertyType == typeof(string))
                     {
-                        destinationProperty.SetValue(destinationInstance, 
+                        destinationProperty.SetValue(destinationInstance,
                             originProperty.GetValue(origin).ToString());
                     }
                     else

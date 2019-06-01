@@ -1,7 +1,7 @@
-﻿using System.IO;
-using System.Xml.Serialization;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
+using System.IO;
+using System.Xml.Serialization;
 
 namespace SIS.MvcFramework.Extensions
 {

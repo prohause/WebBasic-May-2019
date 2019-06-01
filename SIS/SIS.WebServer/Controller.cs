@@ -1,10 +1,10 @@
-﻿using System.Collections.Generic;
-using System.Runtime.CompilerServices;
-using SIS.HTTP.Requests;
+﻿using SIS.HTTP.Requests;
 using SIS.MvcFramework.Extensions;
 using SIS.MvcFramework.Identity;
 using SIS.MvcFramework.Result;
 using SIS.MvcFramework.ViewEngine;
+using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 
 namespace SIS.MvcFramework
 {
@@ -20,9 +20,9 @@ namespace SIS.MvcFramework
         protected Dictionary<string, object> ViewData;
 
         // TODO: Refactor this
-        public Principal User => 
+        public Principal User =>
             this.Request.Session.ContainsParameter("principal")
-            ? (Principal) this.Request.Session.GetParameter("principal")
+            ? (Principal)this.Request.Session.GetParameter("principal")
             : null;
 
         public IHttpRequest Request { get; set; }

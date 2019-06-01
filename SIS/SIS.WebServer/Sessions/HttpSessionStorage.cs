@@ -1,5 +1,5 @@
-﻿using System.Collections.Concurrent;
-using SIS.HTTP.Sessions;
+﻿using SIS.HTTP.Sessions;
+using System.Collections.Concurrent;
 
 namespace SIS.WebServer.Sessions
 {

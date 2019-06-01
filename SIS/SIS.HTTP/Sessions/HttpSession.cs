@@ -1,5 +1,5 @@
-﻿using System.Collections.Generic;
-using SIS.HTTP.Common;
+﻿using SIS.HTTP.Common;
+using System.Collections.Generic;
 
 namespace SIS.HTTP.Sessions
 {

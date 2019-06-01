@@ -1,6 +1,6 @@
-﻿using System;
+﻿using SIS.HTTP.Common;
+using System;
 using System.Text;
-using SIS.HTTP.Common;
 
 namespace SIS.HTTP.Cookies
 {
@@ -25,9 +25,8 @@ namespace SIS.HTTP.Cookies
             this.Key = key;
             this.Value = value;
             this.Expires = DateTime.UtcNow.AddDays(expires);
-			this.Path = path;
+            this.Path = path;
         }
-
 
         public string Key { get; }
 
