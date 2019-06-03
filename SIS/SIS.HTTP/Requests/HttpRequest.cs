@@ -41,15 +41,9 @@ namespace SIS.HTTP.Requests
 
         public IHttpSession Session { get; set; }
 
-        private bool IsValidRequestLine(string[] requestLineParams)
+        private static bool IsValidRequestLine(string[] requestLineParams)
         {
-            if (requestLineParams.Length != 3
-                || requestLineParams[2] != GlobalConstants.HttpOneProtocolFragment)
-            {
-                return false;
-            }
-
-            return true;
+            return requestLineParams.Length == 3 && requestLineParams[2] == GlobalConstants.HttpOneProtocolFragment;
         }
 
         private bool IsValidRequestQueryString(string queryString, string[] queryParameters)
@@ -77,7 +71,7 @@ namespace SIS.HTTP.Requests
 
         private void ParseRequestMethod(string[] requestLineParams)
         {
-            bool parseResult = HttpRequestMethod.TryParse(requestLineParams[0], true,
+            bool parseResult = Enum.TryParse(requestLineParams[0], true,
                 out HttpRequestMethod method);
 
             if (!parseResult)
@@ -179,7 +173,7 @@ namespace SIS.HTTP.Requests
             string[] requestLineParams = splitRequestString[0]
                 .Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
 
-            if (!this.IsValidRequestLine(requestLineParams))
+            if (!IsValidRequestLine(requestLineParams))
             {
                 throw new BadRequestException();
             }
