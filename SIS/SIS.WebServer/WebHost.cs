@@ -42,8 +42,7 @@ namespace SIS.MvcFramework
                 foreach (var action in actions)
                 {
                     var path = $"/{controller.Name.Replace("Controller", string.Empty)}/{action.Name}";
-                    var attribute = action.GetCustomAttributes().Where(
-                        x => x.GetType().IsSubclassOf(typeof(BaseHttpAttribute))).LastOrDefault() as BaseHttpAttribute;
+                    var attribute = action.GetCustomAttributes().LastOrDefault(x => x.GetType().IsSubclassOf(typeof(BaseHttpAttribute))) as BaseHttpAttribute;
                     var httpMethod = HttpRequestMethod.Get;
                     if (attribute != null)
                     {
