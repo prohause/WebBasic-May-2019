@@ -23,8 +23,7 @@ namespace SIS.MvcFramework
             server.Run();
         }
 
-        private static void AutoRegisterRoutes(
-            IMvcApplication application, IServerRoutingTable serverRoutingTable)
+        private static void AutoRegisterRoutes(IMvcApplication application, IServerRoutingTable serverRoutingTable)
         {
             var controllers = application.GetType().Assembly.GetTypes()
                 .Where(type => type.IsClass && !type.IsAbstract

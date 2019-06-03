@@ -18,7 +18,7 @@ namespace IRunes.App.Controllers
             {
                 this.ViewData["Username"] = this.User.Username;
 
-                return this.View("Home");
+                return this.View($"Home");
             }
 
             return this.View();

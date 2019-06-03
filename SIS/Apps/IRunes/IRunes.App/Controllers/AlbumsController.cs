@@ -14,17 +14,17 @@ namespace IRunes.App.Controllers
 {
     public class AlbumsController : Controller
     {
-        private readonly IAlbumService albumService;
+        private readonly IAlbumService _albumService;
 
         public AlbumsController()
         {
-            this.albumService = new AlbumService();
+            this._albumService = new AlbumService();
         }
 
         [Authorize]
         public ActionResult All()
         {
-            ICollection<Album> allAlbums = this.albumService.GetAllAlbums();
+            var allAlbums = this._albumService.GetAllAlbums();
 
             if (allAlbums.Count == 0)
             {
@@ -60,7 +60,7 @@ namespace IRunes.App.Controllers
                 Price = 0M
             };
 
-            this.albumService.CreateAlbum(album);
+            this._albumService.CreateAlbum(album);
 
             return this.Redirect("/Albums/All");
         }
@@ -69,7 +69,7 @@ namespace IRunes.App.Controllers
         public ActionResult Details()
         {
             string albumId = this.Request.QueryData["id"].ToString();
-            Album albumFromDb = this.albumService.GetAlbumById(albumId);
+            Album albumFromDb = this._albumService.GetAlbumById(albumId);
 
             AlbumViewModel albumViewModel = ModelMapper.ProjectTo<AlbumViewModel>(albumFromDb);
 

@@ -7,25 +7,25 @@ namespace SIS.MvcFramework.Attributes.Security
     {
         public AuthorizeAttribute(string authority = "authorized")
         {
-            this.authority = authority;
+            _authority = authority;
         }
 
-        private readonly string authority;
+        private readonly string _authority;
 
-        private bool IsLoggedIn(Principal principal)
+        private static bool IsLoggedIn(Principal principal)
         {
             return principal != null;
         }
 
         public bool IsInAuthority(Principal principal)
         {
-            if (!this.IsLoggedIn(principal))
+            if (!IsLoggedIn(principal))
             {
-                return this.authority == "anonymous";
+                return _authority == "anonymous";
             }
 
-            return this.authority == "authorized"
-                   || principal.Roles.Contains(this.authority.ToLower());
+            return _authority == "authorized"
+                   || principal.Roles.Contains(_authority.ToLower());
         }
     }
 }

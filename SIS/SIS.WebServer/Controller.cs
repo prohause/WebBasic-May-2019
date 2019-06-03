@@ -10,7 +10,7 @@ namespace SIS.MvcFramework
 {
     public abstract class Controller
     {
-        private IViewEngine viewEngine = new SisViewEngine();
+        private readonly IViewEngine _viewEngine = new SisViewEngine();
 
         protected Controller()
         {
@@ -60,10 +60,10 @@ namespace SIS.MvcFramework
             string viewName = view;
 
             string viewContent = System.IO.File.ReadAllText("Views/" + controllerName + "/" + viewName + ".html");
-            viewContent = this.viewEngine.GetHtml(viewContent, model);
+            viewContent = this._viewEngine.GetHtml(viewContent, model);
 
             string layoutContent = System.IO.File.ReadAllText("Views/_Layout.html");
-            layoutContent = this.viewEngine.GetHtml(layoutContent, model);
+            layoutContent = this._viewEngine.GetHtml(layoutContent, model);
             layoutContent = layoutContent.Replace("@RenderBody()", viewContent);
 
             var htmlResult = new HtmlResult(layoutContent);
