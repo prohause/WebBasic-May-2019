@@ -1,0 +1,9 @@
+C:\Users\proha\source\repos\WebBasic-May-2019\SIS\Apps\IRunes\IRunes.Models\bin\Debug\netcoreapp2.2\IRunes.Models.deps.json
+C:\Users\proha\source\repos\WebBasic-May-2019\SIS\Apps\IRunes\IRunes.Models\bin\Debug\netcoreapp2.2\IRunes.Models.dll
+C:\Users\proha\source\repos\WebBasic-May-2019\SIS\Apps\IRunes\IRunes.Models\bin\Debug\netcoreapp2.2\IRunes.Models.pdb
+C:\Users\proha\source\repos\WebBasic-May-2019\SIS\Apps\IRunes\IRunes.Models\obj\Debug\netcoreapp2.2\IRunes.Models.csprojAssemblyReference.cache
+C:\Users\proha\source\repos\WebBasic-May-2019\SIS\Apps\IRunes\IRunes.Models\obj\Debug\netcoreapp2.2\IRunes.Models.csproj.CoreCompileInputs.cache
+C:\Users\proha\source\repos\WebBasic-May-2019\SIS\Apps\IRunes\IRunes.Models\obj\Debug\netcoreapp2.2\IRunes.Models.AssemblyInfoInputs.cache
+C:\Users\proha\source\repos\WebBasic-May-2019\SIS\Apps\IRunes\IRunes.Models\obj\Debug\netcoreapp2.2\IRunes.Models.AssemblyInfo.cs
+C:\Users\proha\source\repos\WebBasic-May-2019\SIS\Apps\IRunes\IRunes.Models\obj\Debug\netcoreapp2.2\IRunes.Models.dll
+C:\Users\proha\source\repos\WebBasic-May-2019\SIS\Apps\IRunes\IRunes.Models\obj\Debug\netcoreapp2.2\IRunes.Models.pdb
