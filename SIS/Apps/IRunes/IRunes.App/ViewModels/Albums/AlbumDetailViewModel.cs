@@ -1,7 +1,8 @@
-﻿using System.Collections.Generic;
-
-namespace IRunes.App.ViewModels
+﻿namespace IRunes.App.ViewModels.Albums
 {
+    using System.Collections.Generic;
+    using Tracks;
+
     public class AlbumDetailsViewModel
     {
         public AlbumDetailsViewModel()
