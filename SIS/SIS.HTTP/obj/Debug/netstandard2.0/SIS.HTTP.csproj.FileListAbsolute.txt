@@ -1,0 +1,12 @@
+C:\Users\proha\source\repos\WebBasic-May-2019\SIS\SIS.HTTP\bin\Debug\netstandard2.0\SIS.HTTP.deps.json
+C:\Users\proha\source\repos\WebBasic-May-2019\SIS\SIS.HTTP\bin\Debug\netstandard2.0\SIS.HTTP.dll
+C:\Users\proha\source\repos\WebBasic-May-2019\SIS\SIS.HTTP\bin\Debug\netstandard2.0\SIS.HTTP.pdb
+C:\Users\proha\source\repos\WebBasic-May-2019\SIS\SIS.HTTP\bin\Debug\netstandard2.0\SIS.Common.dll
+C:\Users\proha\source\repos\WebBasic-May-2019\SIS\SIS.HTTP\bin\Debug\netstandard2.0\SIS.Common.pdb
+C:\Users\proha\source\repos\WebBasic-May-2019\SIS\SIS.HTTP\obj\Debug\netstandard2.0\SIS.HTTP.csprojAssemblyReference.cache
+C:\Users\proha\source\repos\WebBasic-May-2019\SIS\SIS.HTTP\obj\Debug\netstandard2.0\SIS.HTTP.csproj.CoreCompileInputs.cache
+C:\Users\proha\source\repos\WebBasic-May-2019\SIS\SIS.HTTP\obj\Debug\netstandard2.0\SIS.HTTP.AssemblyInfoInputs.cache
+C:\Users\proha\source\repos\WebBasic-May-2019\SIS\SIS.HTTP\obj\Debug\netstandard2.0\SIS.HTTP.AssemblyInfo.cs
+C:\Users\proha\source\repos\WebBasic-May-2019\SIS\SIS.HTTP\obj\Debug\netstandard2.0\SIS.HTTP.csproj.CopyComplete
+C:\Users\proha\source\repos\WebBasic-May-2019\SIS\SIS.HTTP\obj\Debug\netstandard2.0\SIS.HTTP.dll
+C:\Users\proha\source\repos\WebBasic-May-2019\SIS\SIS.HTTP\obj\Debug\netstandard2.0\SIS.HTTP.pdb
