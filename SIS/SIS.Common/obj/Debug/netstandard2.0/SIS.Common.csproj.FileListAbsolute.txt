@@ -1,9 +1,0 @@
-C:\Users\proha\source\repos\WebBasic-May-2019\SIS\SIS.Common\bin\Debug\netstandard2.0\SIS.Common.deps.json
-C:\Users\proha\source\repos\WebBasic-May-2019\SIS\SIS.Common\bin\Debug\netstandard2.0\SIS.Common.dll
-C:\Users\proha\source\repos\WebBasic-May-2019\SIS\SIS.Common\bin\Debug\netstandard2.0\SIS.Common.pdb
-C:\Users\proha\source\repos\WebBasic-May-2019\SIS\SIS.Common\obj\Debug\netstandard2.0\SIS.Common.csprojAssemblyReference.cache
-C:\Users\proha\source\repos\WebBasic-May-2019\SIS\SIS.Common\obj\Debug\netstandard2.0\SIS.Common.csproj.CoreCompileInputs.cache
-C:\Users\proha\source\repos\WebBasic-May-2019\SIS\SIS.Common\obj\Debug\netstandard2.0\SIS.Common.AssemblyInfoInputs.cache
-C:\Users\proha\source\repos\WebBasic-May-2019\SIS\SIS.Common\obj\Debug\netstandard2.0\SIS.Common.AssemblyInfo.cs
-C:\Users\proha\source\repos\WebBasic-May-2019\SIS\SIS.Common\obj\Debug\netstandard2.0\SIS.Common.dll
-C:\Users\proha\source\repos\WebBasic-May-2019\SIS\SIS.Common\obj\Debug\netstandard2.0\SIS.Common.pdb
