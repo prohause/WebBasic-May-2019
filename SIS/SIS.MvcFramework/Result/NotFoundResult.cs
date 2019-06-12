@@ -1,5 +1,5 @@
-﻿using System.Text;
-using SIS.HTTP.Enums;
+﻿using SIS.HTTP.Enums;
+using System.Text;
 
 namespace SIS.MvcFramework.Result
 {

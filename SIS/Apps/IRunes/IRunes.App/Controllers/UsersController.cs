@@ -1,11 +1,11 @@
-﻿using System.Security.Cryptography;
-using System.Text;
-using IRunes.Models;
+﻿using IRunes.Models;
 using IRunes.Services;
 using SIS.MvcFramework;
 using SIS.MvcFramework.Attributes;
 using SIS.MvcFramework.Attributes.Action;
 using SIS.MvcFramework.Result;
+using System.Security.Cryptography;
+using System.Text;
 
 namespace IRunes.App.Controllers
 {

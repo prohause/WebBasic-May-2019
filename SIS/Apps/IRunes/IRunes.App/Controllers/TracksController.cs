@@ -24,7 +24,7 @@ namespace IRunes.App.Controllers
         [Authorize]
         public IActionResult Create(string albumId)
         {
-            return this.View(new TrackCreateViewModel{ AlbumId = albumId });
+            return this.View(new TrackCreateViewModel { AlbumId = albumId });
         }
 
         [Authorize]

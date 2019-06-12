@@ -1,5 +1,4 @@
 ﻿using SIS.Common;
-using SIS.HTTP.Common;
 
 namespace SIS.HTTP.Headers
 {

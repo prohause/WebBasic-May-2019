@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace SIS.MvcFramework.Attributes.Validation
 {
@@ -10,10 +8,9 @@ namespace SIS.MvcFramework.Attributes.Validation
     {
         public EmailSisAttribute()
         {
-            
         }
 
-        public EmailSisAttribute(string errorMessage) 
+        public EmailSisAttribute(string errorMessage)
             : base(errorMessage)
         {
         }
@@ -22,7 +19,7 @@ namespace SIS.MvcFramework.Attributes.Validation
         {
             //TODO Validate
 
-            string valueAsString = (string) Convert.ChangeType(value, typeof(string));
+            string valueAsString = (string)Convert.ChangeType(value, typeof(string));
 
             return Regex.IsMatch(valueAsString, @"\A(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)\Z", RegexOptions.IgnoreCase);
         }

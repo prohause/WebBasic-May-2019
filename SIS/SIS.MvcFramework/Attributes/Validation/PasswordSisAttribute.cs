@@ -1,12 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace SIS.MvcFramework.Attributes.Validation
 {
-   public class PasswordSisAttribute : ValidationSisAttribute
+    public class PasswordSisAttribute : ValidationSisAttribute
     {
-        public PasswordSisAttribute(string errorMessage) 
+        public PasswordSisAttribute(string errorMessage)
             : base(errorMessage)
         {
         }

@@ -1,17 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace SIS.MvcFramework.Attributes.Validation
+﻿namespace SIS.MvcFramework.Attributes.Validation
 {
-   public class RequiredSisAttribute : ValidationSisAttribute
+    public class RequiredSisAttribute : ValidationSisAttribute
     {
         public RequiredSisAttribute()
         {
-            
         }
 
-        public RequiredSisAttribute(string errorMessage) 
+        public RequiredSisAttribute(string errorMessage)
             : base(errorMessage)
         {
         }

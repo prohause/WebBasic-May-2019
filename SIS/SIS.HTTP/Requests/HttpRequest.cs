@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Web;
-using SIS.Common;
+﻿using SIS.Common;
 using SIS.HTTP.Common;
 using SIS.HTTP.Cookies;
 using SIS.HTTP.Cookies.Contracts;
@@ -11,6 +6,11 @@ using SIS.HTTP.Enums;
 using SIS.HTTP.Exceptions;
 using SIS.HTTP.Headers;
 using SIS.HTTP.Sessions;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Net;
+using System.Web;
 
 namespace SIS.HTTP.Requests
 {
@@ -41,7 +41,7 @@ namespace SIS.HTTP.Requests
         public IHttpCookieCollection Cookies { get; }
 
         public HttpRequestMethod RequestMethod { get; private set; }
-        
+
         public IHttpSession Session { get; set; }
 
         private bool IsValidRequestLine(string[] requestLineParams)
@@ -153,7 +153,7 @@ namespace SIS.HTTP.Requests
                     }
 
                     this.FormData[key].Add(WebUtility.UrlDecode(value));
-                }                
+                }
             }
         }
 

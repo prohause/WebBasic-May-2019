@@ -36,7 +36,7 @@ namespace SIS.MvcFramework.Attributes.Validation
         {
             if (objectType == typeof(int))
             {
-                return (int) value >= (int) minValue && (int) value <= (int) maxValue;
+                return (int)value >= (int)minValue && (int)value <= (int)maxValue;
             }
 
             if (objectType == typeof(double))

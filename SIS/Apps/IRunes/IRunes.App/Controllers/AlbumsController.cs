@@ -1,12 +1,12 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using IRunes.Models;
+﻿using IRunes.Models;
 using IRunes.Services;
 using SIS.MvcFramework;
 using SIS.MvcFramework.Attributes;
 using SIS.MvcFramework.Attributes.Security;
 using SIS.MvcFramework.Mapping;
 using SIS.MvcFramework.Result;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace IRunes.App.Controllers
 {
@@ -49,7 +49,6 @@ namespace IRunes.App.Controllers
             {
                 return this.Redirect("/Albums/Create");
             }
-
 
             Album album = ModelMapper.ProjectTo<Album>(model);
             this.albumService.CreateAlbum(album);

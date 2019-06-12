@@ -1,14 +1,14 @@
 ﻿using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
+using SIS.MvcFramework.Identity;
 using System;
 using System.Collections;
 using System.IO;
 using System.Linq;
+using System.Net;
 using System.Reflection;
 using System.Text;
 using System.Text.RegularExpressions;
-using SIS.MvcFramework.Identity;
-using System.Net;
 
 namespace SIS.MvcFramework.ViewEngine
 {
@@ -49,13 +49,13 @@ namespace AppViewCodeNamespace
         public string GetHtml(object model, ModelStateDictionary modelState, Principal user)
         {{
             var Model = {(model == null ? "new {}" : "model as " + GetModelType(model))};
-            var User = user;           
+            var User = user;
             var ModelState= modelState;
 
 	        var html = new StringBuilder();
 
             {csharpHtmlCode}
-            
+
 	        return html.ToString();
         }}
     }}
@@ -67,7 +67,7 @@ namespace AppViewCodeNamespace
 
         private string CheckForWidgets(string viewContent)
         {
-            //Check 
+            //Check
             var widgets = Assembly
                 .GetEntryAssembly()?
                 .GetTypes()

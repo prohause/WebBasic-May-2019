@@ -12,7 +12,7 @@
         </div>
         <div class="album-tracks col-md-6">
             <h1>Tracks</h1>
-            @for(int index = 0; index < Model.Tracks.Count; index++) 
+            @for(int index = 0; index < Model.Tracks.Count; index++)
             {
             <li>
                 <strong>@index+1</strong>. <a href="/Tracks/Details?albumId=@Model.Id&trackId=@Model.Tracks[index].Id"><i>@Model.Tracks[index].Name</i></a>
